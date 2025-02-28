@@ -1,31 +1,36 @@
-pipeline {
-    tools{
-        jdk 'JAVA_HOME_WIN'
-        maven'M2_HOME_WIN'
+pipeline{
+ tools{
+        jdk 'JAVA_HOME'
+        maven 'M2_HOME'
     }
-    agent {label 'winslave'}
+     agent any
+	  
+	  stages{
+	  
+	  stage("checkout"){
+	   steps{
+	   git 'https://github.com/nishankainfo/webapp.git'
+	   }
+	                  }
+	
+	   stage("compile"){
+	    steps{
+		 sh 'mvn compile'
+		}
+		}
+       stage("test"){
+	    steps{
+		 sh 'mvn test'
+		}
+		}
+       stage("package"){
+	    steps{
+		 sh 'mvn clean package'
+                 sh "mv target/*.war target/myapp.war"
 
-    stages {
-        stage('git checkout') {
-            steps {
-                git 'https://github.com/GitLipun/MavenTest1.git'
-            }
-        }
-        stage('compile') {
-            steps {
-               bat 'mvn compile'
-            }
-        }
-        stage('test'){
-            steps {
-               bat 'mvn test'
-            }
-        }
-            stage('package') {
-                steps {
-               bat 'mvn package'
-            }
-        }
-        
-    }
-}
+		}
+		}
+
+
+	}
+	}
