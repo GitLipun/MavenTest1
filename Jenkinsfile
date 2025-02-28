@@ -28,8 +28,7 @@ pipeline{
      sh 'mvn clean package'
                  sh "mv target/*.jar target/myweb.war"
          }
-    }
-
+       }
     }
 }
     
