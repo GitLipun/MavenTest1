@@ -9,7 +9,7 @@ pipeline{
     
     stage("checkout"){
      steps{
-     git 'https://github.com/nishankainfo/webapp.git'
+     git 'https://github.com/GitLipun/MavenTest1.git'
      }
                     }
   
@@ -31,4 +31,3 @@ pipeline{
        }
     }
 }
-    
