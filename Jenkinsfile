@@ -3,7 +3,7 @@ pipeline {
         jdk 'JAVA_HOME'
         maven'M2_HOME'
     }
-    agent any
+    agent ('linuxslv')
 
     stages {
         stage('git checkout') {
