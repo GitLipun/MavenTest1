@@ -4,7 +4,7 @@ pipeline{
         maven 'M2_HOME'
     }
      agent any	  
-	  stages{	  
+stages{	  
 	  stage("checkout"){
 	   steps{
 	   git 'https://github.com/GitLipun/MavenTest1.git'
