@@ -26,5 +26,5 @@ pipeline{
                  sh "mv target/*.war target/myapp.war"
 		}
 		}
-    } 
+	  } 
 }	
