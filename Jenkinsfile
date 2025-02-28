@@ -9,7 +9,7 @@ pipeline{
     
     stage("checkout"){
      steps{
-     git 'https://github.com/GitLipun/MavenTest1.git'
+     git 'https://github.com/nishankainfo/webapp.git'
      }
                     }
   
@@ -29,6 +29,6 @@ pipeline{
                  sh "mv target/*.jar target/myweb.war"
 
     }
-       }
-    }
-}
+    }
+    }
+    }
