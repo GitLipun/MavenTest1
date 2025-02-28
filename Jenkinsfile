@@ -29,6 +29,4 @@ pipeline{
                  sh "mv target/*.war target/myweb.war"
 
     }
-    }
-    }
-    }
+       }
