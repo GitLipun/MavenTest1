@@ -29,6 +29,6 @@ pipeline{
                  sh "mv target/*.jar target/myweb.war"
 
     }
-    }
+    
     }
     
