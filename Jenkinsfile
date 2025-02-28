@@ -3,31 +3,28 @@ pipeline{
         jdk 'JAVA_HOME'
         maven 'M2_HOME'
     }
-     agent any
-    
-    stages{
-    
-    stage("checkout"){
-     steps{
-     git 'https://github.com/GitLipun/MavenTest1.git'
-     }
-                    }
-  
-     stage("compile"){
-      steps{
-     sh 'mvn compile'
-     }
-    }
+     agent any	  
+	  stages{	  
+	  stage("checkout"){
+	   steps{
+	   git 'https://github.com/GitLipun/MavenTest1.git'
+	   }	 
+        }	
+	   stage("compile"){
+	    steps{
+		 sh 'mvn compile'
+		}
+		}
        stage("test"){
-      steps{
-     sh 'mvn test'
-     }
-    }
+	    steps{
+		 sh 'mvn test'
+		}
+		}
        stage("package"){
-      steps{
-     sh 'mvn clean package'
-                 sh "mv target/*.jar target/myweb.war"
-         }
-       }
-    }
-}
+	    steps{
+		 sh 'mvn clean package'
+                 sh "mv target/*.war target/myapp.war"
+		}
+		}
+    } 
+}	
