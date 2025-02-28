@@ -16,19 +16,20 @@ pipeline{
      stage("compile"){
       steps{
      sh 'mvn compile'
-    }
+     }
     }
        stage("test"){
       steps{
      sh 'mvn test'
-    }
+     }
     }
        stage("package"){
       steps{
      sh 'mvn clean package'
                  sh "mv target/*.jar target/myweb.war"
+         }
+    }
 
     }
-    
-    }
+}
     
