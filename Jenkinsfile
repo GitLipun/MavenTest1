@@ -3,7 +3,7 @@ pipeline {
        jdk 'JAVA_HOME'
         maven 'M2_HOME'
     }
-    agent {winslave}
+    agent any
 
     stages {
         stage('git checkout') {
@@ -24,7 +24,7 @@ pipeline {
             stage('package') {
                 steps {
                	 sh 'mvn clean package'
-                 sh "mv target/*.war target/myapp.war"
+                 sh "mv target/*.jar target/myapp.jar"
             }
         }
         
